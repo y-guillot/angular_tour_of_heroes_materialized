@@ -1,0 +1,36 @@
+<h1>{{title}}</h1>
+
+<h2>My Heroes</h2>
+
+<!-- <ul class="heroes">
+  <li *ngFor="let hero of heroes"
+      (click)="onSelect(hero)"
+      [class.selected]="hero === selectedHero">
+    <span class="badge">{{hero.id}}</span> {{hero.name}}
+  </li>
+</ul> -->
+
+<!-- *ngIf="!heroes" -->
+
+<md-nav-list dense class="heroes">
+  <md-progress-spinner *ngIf="!heroes"
+      mode='indeterminate'
+      color='primary'>
+  </md-progress-spinner>
+  <md-list-item *ngFor="let hero of heroes"
+      (click)="onSelect(hero)"
+      [class.selected]="hero === selectedHero">
+    <span class="badge">{{hero.id}}</span>{{hero.name}}
+  </md-list-item>
+</md-nav-list>
+
+<div *ngIf="selectedHero; else undefinedHero">
+  <!--
+    bind selectedHero to the `hero` property within HeroDetailComponent
+    through `@angular/core/Input` component 
+  -->
+  <hero-detail [hero]="selectedHero"></hero-detail>
+</div>
+<ng-template #undefinedHero>
+  <p *ngIf="heroes">Pick-up a superhero</p>
+</ng-template>

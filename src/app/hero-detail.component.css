@@ -1,0 +1,22 @@
+#hero-detail {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  padding: 1em;
+}
+
+#edit-hero {
+  margin-bottom: 1em;
+}
+
+#edit-hero span{
+  color: rgba(0, 200, 255, 0.8);
+}
+
+md-icon  {
+  color: rgba(0, 200, 255, 0.8);
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  box-sizing: content-box;
+  vertical-align: text-bottom;
+}

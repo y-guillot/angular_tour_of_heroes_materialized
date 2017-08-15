@@ -1,0 +1,86 @@
+/*.selected {
+  background-color: #CFD8DC !important;
+}
+
+.heroes {
+  margin: 0 0 2em 0;
+  list-style-type: none;
+  padding: 0;
+  width: 15em;
+}
+.heroes li {
+  cursor: pointer;
+  position: relative;
+  left: 0;
+  background-color: #EEE;
+  margin: .5em;
+  padding: .3em 0;
+  height: 1.6em;
+  border-radius: 4px;
+}
+.heroes li.selected:hover {
+  background-color: #BBD8DC !important;
+  color: white;
+}
+.heroes li:hover {
+  color: #607D8B;
+  background-color: #DDD;
+  left: .1em;
+}
+.heroes .text {
+  position: relative;
+  top: -3px;
+}
+.heroes .badge {
+  display: inline-block;
+  font-size: small;
+  color: white;
+  padding: 0.8em 0.7em 0 0.7em;
+  background-color: #607D8B;
+  line-height: 1em;
+  position: relative;
+  left: -1px;
+  top: -4px;
+  height: 1.8em;
+  margin-right: .8em;
+  border-radius: 4px 0 0 4px;
+}*/
+
+md-nav-list.heroes {
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+md-nav-list.heroes .mat-list-icon {
+  color: rgba(0, 200, 255, 0.8);
+}
+
+/* TODO : doesn't work */
+md-nav-list.heroes .mat-nav-list[dense] .mat-list-item .mat-list-item-content {
+  height: 80px !important;
+  color: yellow;
+}
+
+md-nav-list.heroes .selected {
+  color: #ffa0dc;
+}
+
+md-nav-list.heroes .selected .badge {
+  background-color: #ffa0dc;
+}
+
+md-nav-list.heroes .badge {
+  padding: .3em;
+  line-height: 1em;
+  font-size: small;
+  color: white;
+  background-color: #d2dce0;
+  border-radius: 20%;
+  margin-right: .6em;
+}
+
+md-progress-spinner {
+  margin: 20px auto;
+  height: 40px;
+  width: 40px;
+}

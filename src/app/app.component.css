@@ -1,0 +1,16 @@
+
+.mat-button, .mat-icon-button, .mat-raised-button {
+  background-color: #54d7ff;
+  margin-right:.5em;
+  padding: 0 .8em;
+  color: white;
+}
+
+md-icon {
+  margin-right: .3em;
+  color: white;
+  width: 20px;
+  height: 20px;
+  font-size: 20px;
+  box-sizing: content-box;
+}

@@ -1,0 +1,26 @@
+<!-- <h2>{{heroCopy.name}} details!</h2>
+<div>
+	<label>id: </label>{{heroCopy.id}}
+</div>
+<div>
+	<label>name: </label>
+	<input [(ngModel)]="heroCopy.name" placeholder="name">
+</div> -->
+
+<h2>{{hero.name}} is my Hero!</h2>
+<div id="hero-detail">
+	<div id="edit-hero">
+		<md-icon aria-hidden="true">edit</md-icon>
+		<span>Edit your Hero n° <strong>{{hero.id}}</strong></span>
+	</div>
+	<md-input-container>
+		<input mdInput #content required minlength="{{minLength}}" maxlength="{{maxLength}}" placeholder="Name" [(ngModel)]="hero.name">
+		<md-hint align="start">todo : already in use</md-hint>
+    	<md-hint align="end">{{content.value.length}} / {{maxLength}}</md-hint>
+	</md-input-container>
+	<!-- <div>
+		<label>name: </label>
+		<input [(ngModel)]="hero.name" placeholder="name">
+	</div> -->
+<div>
+
