@@ -1,7 +1,11 @@
-#hero-detail {
+.hero-detail {
   border: 1px solid #ccc;
   border-radius: 5px;
   padding: 1em;
+}
+
+.margin-top {
+  margin-top: 1em;
 }
 
 #edit-hero {
@@ -19,4 +23,24 @@ md-icon  {
   font-size: 20px;
   box-sizing: content-box;
   vertical-align: text-bottom;
+}
+
+#back {
+  margin-top: 1em;
+}
+
+#back md-icon {
+  color: darkgrey;
+  position: relative;
+  left: -5px;
+}
+
+md-progress-spinner {
+  margin: 0 auto;
+  height: 40px;
+  width: 40px;
+}
+
+ng-template {
+  margin-top: 1em;
 }

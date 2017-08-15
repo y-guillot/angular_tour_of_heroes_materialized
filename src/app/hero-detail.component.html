@@ -7,20 +7,46 @@
 	<input [(ngModel)]="heroCopy.name" placeholder="name">
 </div> -->
 
-<h2>{{hero.name}} is my Hero!</h2>
-<div id="hero-detail">
-	<div id="edit-hero">
-		<md-icon aria-hidden="true">edit</md-icon>
-		<span>Edit your Hero n° <strong>{{hero.id}}</strong></span>
+<ng-template #pendingHero>
+	<div class="hero-detail margin-top">
+    	<md-progress-spinner  mode='indeterminate' color='warn'></md-progress-spinner>
 	</div>
-	<md-input-container>
-		<input mdInput #content required minlength="{{minLength}}" maxlength="{{maxLength}}" placeholder="Name" [(ngModel)]="hero.name">
-		<md-hint align="start">todo : already in use</md-hint>
-    	<md-hint align="end">{{content.value.length}} / {{maxLength}}</md-hint>
-	</md-input-container>
-	<!-- <div>
-		<label>name: </label>
-		<input [(ngModel)]="hero.name" placeholder="name">
-	</div> -->
-<div>
+</ng-template>
 
+<!--
+	@TODO : Curious rendering | hooks problems :
+	ngOnInit() or *ngIf or routing mechanism seems to freeze some parts of the view :
+	- ex : a code placed at the bottom of this page (@SEE #here anchor) get troubles. 
+	- ex : a ng-template declared after the div below get troubles too and won't work.
+-->
+<div *ngIf="hero; else pendingHero">
+	<h2>{{hero.name}} is my Hero!</h2>
+	<div class="hero-detail">
+		<div id="edit-hero">
+			<md-icon aria-hidden="true">edit</md-icon>
+			<span>Edit your Hero n° <strong>{{hero.id}}</strong></span>
+		</div>
+		<section>
+			<md-input-container>
+				<input mdInput #content required minlength="{{minLength}}" maxlength="{{maxLength}}" placeholder="Name" [(ngModel)]="hero.name">
+				<md-hint align="start">todo : already in use</md-hint>
+		    	<md-hint align="end">{{content.value.length}} / {{maxLength}}</md-hint>
+			</md-input-container>
+		</section>
+
+		<section>
+			<button id="back" md-raised-button (click)="goBack()">
+		    	<md-icon aria-hidden="true">keyboard_backspace</md-icon>Back
+		  	</button>
+	  	</section>
+		<!-- <div>
+			<label>name: </label>
+			<input [(ngModel)]="hero.name" placeholder="name">
+		</div> -->
+	<div>
+</div>
+
+<!-- 
+	@SEE #here
+	Any code there won't be render until the hero is filled or *ngIf has ended.
+ -->

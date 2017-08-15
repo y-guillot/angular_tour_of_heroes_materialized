@@ -1,22 +1,22 @@
 <h2>Top Heroes</h2>
 
 <div class="grid grid-pad">
-	<md-progress-spinner *ngIf="!heroes.length"
-		mode='indeterminate'
-      	color='accent'>
-  	</md-progress-spinner>
-  	<md-grid-list *ngIf="heroes.length"
-  			cols="4"
-  			rowHeight="fit"
-  			gutterSize=".5em">
-  		<md-grid-tile *ngFor="let hero of heroes">
-  			<h4>{{hero.name}}</h4>
-  		</md-grid-tile>
-	</md-grid-list>
+    <md-progress-spinner *ngIf="!heroes.length"
+            mode='indeterminate'
+            color='accent'>
+    </md-progress-spinner>
+    <md-grid-list *ngIf="heroes.length"
+            cols="4"
+            rowHeight="fit"
+            gutterSize=".5em">
+        <md-grid-tile *ngFor="let hero of heroes" [routerLink]="['/detail', hero.id]">
+            <h4>{{hero.name}}</h4>
+        </md-grid-tile>
+    </md-grid-list>
 
-	<!-- <div *ngFor="let hero of heroes" class="col-1-4">
-		<div class="module hero">
-			<h4>{{hero.name}}</h4>
-		</div>
-	</div> -->
+  	<!-- <div *ngFor="let hero of heroes" class="col-1-4">
+  		<div class="module hero">
+  			<h4>{{hero.name}}</h4>
+  		</div>
+  	</div> -->
 </div>

@@ -13,24 +13,28 @@
 <!-- *ngIf="!heroes" -->
 
 <md-nav-list dense class="heroes">
-  <md-progress-spinner *ngIf="!heroes"
-      mode='indeterminate'
-      color='primary'>
-  </md-progress-spinner>
-  <md-list-item *ngFor="let hero of heroes"
-      (click)="onSelect(hero)"
-      [class.selected]="hero === selectedHero">
-    <span class="badge">{{hero.id}}</span>{{hero.name}}
-  </md-list-item>
+    <md-progress-spinner *ngIf="!heroes"
+            mode='indeterminate'
+            color='primary'>
+    </md-progress-spinner>
+    <md-list-item *ngFor="let hero of heroes"
+            (click)="onSelect(hero)"
+            [class.selected]="hero === selectedHero">
+        <span class="badge">{{hero.id}}</span>{{hero.name}}
+    </md-list-item>
 </md-nav-list>
 
 <div *ngIf="selectedHero; else undefinedHero">
-  <!--
+    <!--
     bind selectedHero to the `hero` property within HeroDetailComponent
-    through `@angular/core/Input` component 
-  -->
-  <hero-detail [hero]="selectedHero"></hero-detail>
+    through `@angular/core/Input` component
+    -->
+    <!-- <hero-detail [hero]="selectedHero"></hero-detail> -->
+    <h3>{{selectedHero.name | uppercase}} is my hero</h3>
+    <button id="details" md-raised-button (click)="gotoDetail()">
+        <md-icon aria-hidden="true">account_box</md-icon>Go details
+    </button>
 </div>
 <ng-template #undefinedHero>
-  <p *ngIf="heroes">Pick-up a superhero</p>
+    <p *ngIf="heroes">Pick-up a superhero</p>
 </ng-template>

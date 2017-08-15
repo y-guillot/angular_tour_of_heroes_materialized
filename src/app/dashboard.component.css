@@ -1,6 +1,12 @@
 md-grid-tile {
-  background: #ff7676;
+  background-color: #ff7676;
   color: white;
+  cursor: pointer;
+  border-radius: 5px;
+}
+
+md-grid-tile:hover {
+  background-color: #ff8e8e;
 }
 
 md-grid-list {

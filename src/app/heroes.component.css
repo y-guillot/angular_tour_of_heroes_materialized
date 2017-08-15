@@ -84,3 +84,13 @@ md-progress-spinner {
   height: 40px;
   width: 40px;
 }
+
+#details {
+  background-color: #d8cfff;
+}
+
+#details md-icon {
+  color: #7d74ff;
+  position: relative;
+  left: -5px;
+}
