@@ -51,6 +51,19 @@ export class HeroDetailComponent implements OnInit {
   		this.location.back();
 	}
 
+	save(): void {
+  		this.heroService.update(this.hero)
+  			/*.then((hero) => console.log(JSON.stringify(hero)));*/
+  			.then(() => this.goBack()); // TODO don't go back, add material dialog or toast instead, then go back...
+	}
+
+	delete(): void {
+		this.heroService
+			.delete(this.hero.id).then(() => {
+				this.location.back();
+			});
+	}
+
 	/*
 	heroCopy: Hero;
 

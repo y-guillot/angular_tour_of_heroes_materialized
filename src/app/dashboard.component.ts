@@ -17,6 +17,6 @@ export class DashboardComponent implements OnInit {
 	ngOnInit(): void {
 		console.log("ngOnInit() called from Dashboard");
 		this.heroService.getHeroesSlowly()
-				.then(heroes => this.heroes = heroes.slice(1, 5));
+				.then(heroes => this.heroes = heroes.slice(0, 4));
 	}
 }

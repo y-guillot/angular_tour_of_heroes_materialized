@@ -1,0 +1,22 @@
+<div id="search-component">
+	<h4>Search a Hero</h4>
+	<!-- <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+	<div>
+		<div *ngFor="let hero of heroes | async"
+				(click)="gotoDetail(hero)" class="search-result" >
+			{{hero.name}}
+		</div>
+	</div> -->
+
+<form ng-submit="test()">
+	<md-input-container>
+   		<input type="text" placeholder="Hero name" mdInput (keyup)="search($event)" [mdAutocomplete]="auto" >
+	</md-input-container>
+
+	<md-autocomplete #auto="mdAutocomplete">
+   		<md-option *ngFor="let hero of heroes | async" (click)="gotoDetail(hero)"  class="search-result">
+      		{{ hero.name }}
+   		</md-option>
+	</md-autocomplete>
+</form>
+</div>

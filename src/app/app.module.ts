@@ -1,15 +1,18 @@
-import {BrowserModule}             from '@angular/platform-browser';
-import {NgModule}                  from '@angular/core';
-import {FormsModule}               from '@angular/forms'; // <-- NgModel lives here
-import {BrowserAnimationsModule}   from '@angular/platform-browser/animations';
+import {BrowserModule}				from '@angular/platform-browser';
+import {NgModule}					from '@angular/core';
+import {FormsModule, ReactiveFormsModule} from '@angular/forms'; // <-- NgModel lives here
+import {BrowserAnimationsModule}	from '@angular/platform-browser/animations';
+import {HttpModule}					from '@angular/http';
 /*import {RouterModule}              from '@angular/router';*/
+
 import {
     MdListModule,
     MdIconModule,
     MdInputModule,
     MdButtonModule,
     MdProgressSpinnerModule,
-    MdGridListModule
+    MdGridListModule,
+    MdAutocompleteModule
 } from '@angular/material';
 
 // Every component must be declared in one—and ONLY one—NgModule
@@ -20,13 +23,20 @@ import {HeroesComponent}        from './heroes.component';
 import {DashboardComponent}     from './dashboard.component';
 import {HeroService}            from './hero.service';
 import {AppRoutingModule}       from './app-routing.module';
+import {HeroSearchComponent}	from './hero-search.component';
+
+
+// Imports for loading & configuring the in-memory web api
+import {InMemoryWebApiModule}	from 'angular-in-memory-web-api'; /* <-- intercept Http requests to simulate remote server */
+import {InMemoryDataService}	from './in-memory-data.service';
 
 @NgModule({
     declarations: [
         AppComponent,
         HeroDetailComponent,
         HeroesComponent,
-        DashboardComponent
+        DashboardComponent,
+        HeroSearchComponent
     ],
     imports: [
         BrowserModule,
@@ -37,7 +47,12 @@ import {AppRoutingModule}       from './app-routing.module';
         MdProgressSpinnerModule,
         BrowserAnimationsModule,
         MdGridListModule,
-        FormsModule,     /* <-- import FormsModule before binding with [(ngModel)] */
+        MdAutocompleteModule,
+        HttpModule,
+        InMemoryWebApiModule.forRoot(InMemoryDataService), /* <-- replacing the Http client's XHR backend service with an in-memory alternative.*/
+        FormsModule, /* <-- import FormsModule before binding with [(ngModel)] */
+        ReactiveFormsModule,
+        /*MaterialModule,*/
         AppRoutingModule /* <-- routes are now externalized */
         /*RouterModule.forRoot([
           {path: 'heroes', component: HeroesComponent},

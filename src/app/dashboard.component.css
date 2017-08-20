@@ -9,10 +9,6 @@ md-grid-tile:hover {
   background-color: #ff8e8e;
 }
 
-md-grid-list {
-  height:3em;
-}
-
 md-progress-spinner {
   margin: 0 auto;
   height: 40px;

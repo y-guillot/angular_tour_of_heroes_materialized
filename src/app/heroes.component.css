@@ -94,3 +94,50 @@ md-progress-spinner {
   position: relative;
   left: -5px;
 }
+
+.pickup {
+	line-height: 2em;
+	color: #aaa;
+	text-transform: italic;
+	font-size: .8em;
+}
+
+#new-hero {
+	margin-top: 1em;
+}
+
+#new-hero button {
+	margin-left: 1em;
+	background-color: #aae236;
+}
+
+#new-hero button.discard {
+	background-color: #ddd;
+}
+
+#add-hero {
+	float: right;
+	margin-top: .5em;
+	background-color: #aae236;
+}
+
+button.delete {
+	height: 22px;
+	width: 22px;
+	position: absolute;
+	float: right;
+	right: .6em;
+	top: .6em;
+	background-color: #888;
+}
+
+button.delete md-icon{
+	padding:0;
+	margin:0;
+	top: -2px;
+	left: -1px;
+	position: relative;
+	line-height: 22px;
+	font-size: 18px;
+	color: white;
+}

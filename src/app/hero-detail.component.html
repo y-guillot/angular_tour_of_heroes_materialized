@@ -16,7 +16,7 @@
 <!--
 	@TODO : Curious rendering | hooks problems :
 	ngOnInit() or *ngIf or routing mechanism seems to freeze some parts of the view :
-	- ex : a code placed at the bottom of this page (@SEE #here anchor) get troubles. 
+	- ex : a code placed at the bottom of this page (@SEE #here anchor) get troubles.
 	- ex : a ng-template declared after the div below get troubles too and won't work.
 -->
 <div *ngIf="hero; else pendingHero">
@@ -33,10 +33,15 @@
 		    	<md-hint align="end">{{content.value.length}} / {{maxLength}}</md-hint>
 			</md-input-container>
 		</section>
-
 		<section>
 			<button id="back" md-raised-button (click)="goBack()">
 		    	<md-icon aria-hidden="true">keyboard_backspace</md-icon>Back
+		  	</button>
+		  	<button id="save" md-raised-button (click)="save()">
+		    	<md-icon aria-hidden="true">backup</md-icon>Save changes
+		  	</button>
+		  	<button id="delete" md-raised-button (click)="delete()">
+		    	<md-icon aria-hidden="true">delete_forever</md-icon>Delete
 		  	</button>
 	  	</section>
 		<!-- <div>
@@ -46,7 +51,8 @@
 	<div>
 </div>
 
-<!-- 
+<!--
 	@SEE #here
 	Any code there won't be render until the hero is filled or *ngIf has ended.
  -->
+

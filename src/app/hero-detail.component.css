@@ -1,46 +1,72 @@
 .hero-detail {
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  padding: 1em;
+	border: 1px solid #ccc;
+	border-radius: 5px;
+	padding: 1em;
 }
 
 .margin-top {
-  margin-top: 1em;
+	margin-top: 1em;
 }
 
 #edit-hero {
-  margin-bottom: 1em;
+	margin-bottom: 1em;
 }
 
 #edit-hero span{
-  color: rgba(0, 200, 255, 0.8);
+	color: rgba(0, 200, 255, 0.8);
 }
 
 md-icon  {
-  color: rgba(0, 200, 255, 0.8);
-  width: 20px;
-  height: 20px;
-  font-size: 20px;
-  box-sizing: content-box;
-  vertical-align: text-bottom;
+	color: rgba(0, 200, 255, 0.8);
+	width: 20px;
+	height: 20px;
+	font-size: 20px;
+	box-sizing: content-box;
+	vertical-align: text-bottom;
 }
 
 #back {
-  margin-top: 1em;
+	margin-top: 1em;
+	background-color: #9c9c9c;
+	color: white;
 }
 
 #back md-icon {
-  color: darkgrey;
-  position: relative;
-  left: -5px;
+	color: white;
+	position: relative;
+	left: -5px;
+}
+
+#save {
+	background-color: #42ad7a;
+	color: white;
+	margin-left: .5em;
+}
+
+#save md-icon {
+	color: white;
+	position: relative;
+	left: -5px;
+}
+
+#delete {
+	background-color: #dc4040;
+	color: white;
+	margin-left: .5em;
+}
+
+#delete md-icon {
+	color: white;
+	position: relative;
+	left: -5px;
 }
 
 md-progress-spinner {
-  margin: 0 auto;
-  height: 40px;
-  width: 40px;
+	margin: 0 auto;
+	height: 40px;
+	width: 40px;
 }
 
 ng-template {
-  margin-top: 1em;
+	margin-top: 1em;
 }
