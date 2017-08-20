@@ -2,4 +2,11 @@
 Tour of Heroes from Angular Tutorial enhanced with Material Design
 
 ## Overview
-![sample](assets/sample.png)
+
+![heroes_list](assets/4.png)
+
+![dashboard](assets/1.png)
+
+![hero_detail](assets/2.png)
+
+![add_hero](assets/3.png)

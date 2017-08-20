@@ -63,10 +63,9 @@
     				<md-error *ngIf="heroFormControl.hasError">
 						must be sized from {{nameMinLength}} to {{nameMaxLength}} chars
     				</md-error>
-    				---> {{heroFormControl.errors}}
 				</md-input-container>
-				---> {{heroFormControl.hasError}}
-				<button md-raised-button (click)="add(heroName.value); heroName.value=''" [disabled]="true">Save</button>
+				<!-- TODO : add [disabled]="test" on Save button when form is not valid or heroFormControl has errors-->
+				<button md-raised-button (click)="add(heroName.value); heroName.value=''" >Save</button>
 				<button class="discard" md-raised-button (click)="toggleHero()">Discard</button>
 			</form>
 		</section>
